@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,31 @@
   <link rel="stylesheet" href="./src/styles/main.css">
 </head>
 <body>
-  
+  <heade id="header" class="header-container">
+    <span class="header-arrow inactive">&lt;</span>
+    <h1 class="header-title">Movies</h1>
+    <h1 class="header-title header-title--categoryView inactive">Acción</h1>
+
+    <form id="searchForm" class="header-searchForm">
+      <input type="text" placeholder="Buscar pelicula">
+      <button>Buscar</button>
+    </form>
+  </header>
+  <section id="trendingPreview" class="trendingPreview-container">
+
+  </section>
+  <section id="categoriesPreview" class="categoriesPreview-container">
+
+  </section>
+  <section id="genericList" class="genericList-container inactive">
+
+  </section>
+  <section id="movieDetail" class="movieDetail-container inactive">
+
+  </section>
+
+  <footer>Footer</footer>
+  <script src="src/secret.js"></script>
   <script src="src/main.js"></script>
 </body>
 </html>
