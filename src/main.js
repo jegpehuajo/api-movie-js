@@ -29,4 +29,40 @@
     console.log({data});
   }
 
+  async function getCategoriesPreview(){
+    const response = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + API_KEY);
+    const data = await response.json();
+
+    // try {
+    //   const response = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=' + API_KEY);
+    //   if (!response.ok) {
+    //     throw new Error('La solicitud no fue exitosa');
+    //   }
+    //   const data = await response.json();
+  
+    //   // Resto del código para procesar los datos
+    // } catch (error) {
+    //   console.error('Error en la solicitud fetch:', error);
+    // }
+
+    const categories = data.genres;
+    categories.forEach(category => {
+      const previewCategoriesContainer = document.querySelector('#categoriesPreview .categoriesPreview-list');
+      const categoryContainer = document.createElement('div');
+      categoryContainer.classList.add('category-container');
+
+      const categoryTitle = document.createElement('h3');
+      categoryTitle.classList.add('category-container');
+      categoryTitle.setAttribute('id',category.name);
+      
+      const categoryTitleText = document.createTextNode(category.name);
+
+      categoryTitle.appendChild(categoryTitleText);
+      categoryContainer.appendChild(categoryTitle);
+      previewCategoriesContainer.appendChild(categoryContainer);
+    });
+  }
+
+
   getTrendingMoviesPreview();
+  getCategoriesPreview();
